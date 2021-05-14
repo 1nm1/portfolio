@@ -1,3 +1,4 @@
+#region Import Libraries
 from fastquant import get_crypto_data
 from fastquant import backtest
 import pandas as pd
@@ -8,14 +9,35 @@ from plotly.subplots import make_subplots
 import json
 import os
 import sys
+#endregion 
 
 def data_api(pair, start_date,end_date, time_resolution):
+    '''
+    Summary:
+    ----------
+    Retrieves crypto data via Binance API
+
+    Params:
+    ----------
+    pair : str
+        crypto pair to retrieve (i.e. BTC/USDT)
+    start_date : str
+        starting date in dataset (YYYY-MM-DD)
+    end_date : str
+        ending date in dataset (YYYY-MM-DD)
+    time_resolution : str
+        resolution in data set (1h, 1d, 1w)
+
+    Outputs:
+    ----------
+    crypto : dataframe 
+        financial data in OHLCV form
+    '''
     crypto = get_crypto_data(
         pair,
         start_date,
         end_date,
         time_resolution=time_resolution)
-    crypto['price change'] = crypto['close'] - crypto['open']
     
     return crypto
 
