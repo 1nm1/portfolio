@@ -1,0 +1,16 @@
+{
+    "strats": [
+    {
+        "emac": 
+        {
+            "fast_period":20,
+            "slow_period":50
+        },
+        "rsi": 
+        {
+            "rsi_lower":30,
+            "rsi_upper":70
+        }
+    }
+]
+}
