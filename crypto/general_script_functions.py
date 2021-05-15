@@ -1,14 +1,16 @@
-#region Import Libraries
+
+# region Import Libraries
 import os
 import time
-#endregion
+# endregion
+
 
 def clear_terminal():
     '''
     Summary:
     ----------
     Clears terminal
-    
+
     Params:
     ----------
     none
@@ -25,7 +27,7 @@ def func_perform_time(func):
     Summary:
     ----------
     Times the execution of a passed function
-    
+
     Params:
     ----------
     func : Object
@@ -40,9 +42,8 @@ def func_perform_time(func):
         prog_start = time.perf_counter()
         result = func(*args, **kwargs)
         prog_finish = time.perf_counter()
-        run_time = round(prog_finish-prog_start,3)
-        print("\t[Performance] " + str(func.__name__) + " --> " + str(run_time) + " sec")
+        run_time = round(prog_finish-prog_start, 3)
+        print(f"""\t[Performance] {func.__name__}
+                --> {run_time} sec""")
         return result
     return function_timing
-
-
