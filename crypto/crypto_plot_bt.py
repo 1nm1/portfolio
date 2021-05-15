@@ -113,15 +113,17 @@ def df_trans_calcs(df):
     df : pandas dataframe
         resulting dataframe after transformations and calculations
     '''
-    df['close price change'] = df['close'].pct_change() * 100
-    df['close delta'] = df['close'].diff() 
-    df['vol price change'] = df['volume'].pct_change() * 100
-    df['vol delta'] = df['volume'].diff()
-    
+    periods = 10
+    df['close pert change'] = df['close'].pct_change(periods=periods) * 100
+    df['close delta'] = df['close'].diff(periods=periods) 
+    df['vol pert change'] = df['volume'].pct_change(periods=periods) * 100
+    df['vol delta'] = df['volume'].diff(periods=periods)
+    df['close pert change ewm'] = df['close pert change'].ewm(span=20).mean()
+    df['vol pert change ewm'] = df['vol pert change'].ewm(span=20).mean()
     return df
 
 @gsf.func_perform_time
-def plot_data(df):
+def plot_data(df, pair, time_resolution):
     '''
     Summary:
     ----------
@@ -131,39 +133,64 @@ def plot_data(df):
     ----------
     df : dataframe 
         financial data in OHLCV form
+    pair : str
+        crypto pair to retrieve (i.e. BTC/USDT)
+    time_resolution : str
+        resolution in data set (1h, 1d, 1w)
 
     Outputs:
     ----------
     none
     '''
-    fig = make_subplots(specs=[[{"secondary_y": True}]])
-    fig.add_trace(
-        go.Scattergl(
-            name="Volume",
-            x = df.index,
-            y = df['volume'],
-            mode='lines',
-            opacity=0.5,
-            line=dict(color='grey', width=1)
-            ),
-            secondary_y=True,
-        )
+    fig = make_subplots(
+            rows=1,
+            cols=2,
+            specs=[[{"secondary_y": True},{"secondary_y": True}]])
 
-    fig.add_trace(
-        go.Scattergl(
-            name="Close",
-            x = df.index,
-            y = df['close'],
-            mode='lines+markers',
-            opacity=1.0,
-            line=dict(color='darkblue', width=2),
-            marker=dict(
-                size=6,
-                )
-            ),
-            secondary_y=False,
-        )
-
+    fig_dict = {
+        'fig1':
+            {
+                'name':'Volume','x':df.index,'y':df['volume'],
+                'mode':'lines','opacity':0.75,'line':dict(color='darkgreen', width=1),
+                'secondary_y':True,'row':1,'col':1
+            },
+        'fig2':
+            {
+                'name':'Close','x':df.index,'y':df['close'],
+                'mode':'lines','opacity':1.0,'line':dict(color='darkblue', width=2),
+                'secondary_y':False,'row':1,'col':1
+            }, 
+        'fig3':
+            {
+                'name':'Volume % Change EWM','x':df.index,'y':df['vol pert change ewm'],
+                'mode':'lines','opacity':0.75,'line':dict(color='darkgreen', width=1),
+                'secondary_y':True,'row':1,'col':2
+            }, 
+        'fig4':
+            {
+                'name':'Close % Change EWM','x':df.index,'y':df['close pert change ewm'],
+                'mode':'lines','opacity':1.0,'line':dict(color='darkblue', width=2),
+                'secondary_y':False,'row':1,'col':2
+            },  
+        }
+    
+    for fig_ in fig_dict:
+        figure = fig_dict[fig_]
+        fig.add_trace(
+            go.Scattergl(
+                name=figure['name'],
+                x = figure['x'],
+                y = figure['y'],
+                mode=figure['mode'],
+                opacity=figure['opacity'],
+                line=figure['line']
+                ),
+                secondary_y=figure['secondary_y'],
+                row=figure['row'],
+                col=figure['col']
+            )
+    
+    fig.update_layout(title_text=f"{pair}, {time_resolution}  |  {start_date} --> {end_date}")
     fig.show()
 
 @gsf.func_perform_time
@@ -212,7 +239,7 @@ if __name__ == "__main__":
     df = df_trans_calcs(df)
 
     # Plot data
-    plot_data(df)
+    plot_data(df, pair, time_resolution)
     
     # Test trading strategies
     test_strat = False
