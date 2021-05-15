@@ -5,22 +5,36 @@ import time
 
 def clear_terminal():
     '''
-    Clears terminal 
+    Summary:
+    ----------
+    Clears terminal
+    
+    Params:
+    ----------
+    none
 
-    INPUTS:     None
-    RETURNS:    None
-    GLOBAL:     None      
+    Outputs:
+    ----------
+    none
     '''
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def func_perform_time(func):
     '''
-    Prints to terminal the execution time for a specific function. Use as a decorator.
+    Summary:
+    ----------
+    Times the execution of a passed function
+    
+    Params:
+    ----------
+    func : Object
+        function to time performance
 
-    INPUTS:     Object  [Function]    
-    RETURNS:    Args, Kwargs from Function
-    GLOBAL:     None      
+    Outputs:
+    ----------
+    Args, Kwargs : Any
+        Args, Kwargs from the passed function
     '''
     def function_timing(*args, **kwargs):
         prog_start = time.perf_counter()
