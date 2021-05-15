@@ -70,7 +70,9 @@ def fetch_data(pair, start_date, end_date, time_resolution):
         financial data in OHLCV form
     '''
     print("\n=== Fetching Data ===")
-    print(f"\tAsset / Pair: {pair}\n\tStart Date: {start_date}\n\tEnd Date: {end_date}\n\tResolution: {time_resolution}")
+    print(f"""\tAsset / Pair: {pair}\n\tStart Date:
+         {start_date}\n\tEnd Date: {end_date}\n\t
+         Resolution: {time_resolution}""")
 
     # Retrieve initial set of data
     df_main = data_api(pair, start_date, end_date, time_resolution)
@@ -82,7 +84,7 @@ def fetch_data(pair, start_date, end_date, time_resolution):
     # If dates don't match, collect additional data
     if end_date_date != df_end_date:
         data_trigger = True
-        while data_trigger == True:
+        while data_trigger is True:
             df = data_api(
                 pair,
                 df_end_date.strftime('%Y-%m-%d'),
@@ -90,7 +92,9 @@ def fetch_data(pair, start_date, end_date, time_resolution):
                 time_resolution)
             df_end_date = df.iloc[[-1]].index.date[0]
             df_main = pd.concat([df_main, df])
-            print(f"\tCurrent date captured: {df_end_date} | There are {(end_date_date-df_end_date).days} days remaining")
+            print(f"""\tCurrent date captured: {df_end_date}
+                 | There are {(end_date_date-df_end_date).days}
+                  days remaining""")
             if int((end_date_date-df_end_date).days) < 1:
                 data_trigger = False
 
@@ -205,7 +209,8 @@ def plot_data(df, pair, start_date, end_date, time_resolution):
             col=figure['col']
             )
 
-    fig.update_layout(title_text=f"{pair}, {time_resolution}  |  {start_date} --> {end_date}")
+    fig.update_layout(title_text=f"""{pair}, {time_resolution}
+          |  {start_date} --> {end_date}""")
     fig.show()
 
 
