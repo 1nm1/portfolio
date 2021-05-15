@@ -3,12 +3,12 @@ from fastquant import get_crypto_data
 from fastquant import backtest
 import pandas as pd
 import datetime as dt
-import time
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
 import os
 import sys
+import general_script_functions as gsf
 #endregion 
 
 def data_api(pair, start_date,end_date, time_resolution):
@@ -41,17 +41,43 @@ def data_api(pair, start_date,end_date, time_resolution):
     
     return crypto
 
-
+@gsf.func_perform_time
 def fetch_data(pair, start_date,end_date, time_resolution):
-    start = time.time()
+    '''
+    Summary:
+    ----------
+    Manages the data retrievel from Binance API.
+    Due to API limitation, this function continues to collect data
+    if the required dataset is larger than 500 data points (does this by 
+    checking if end date equals the requested end date)
+
+    Params:
+    ----------
+    pair : str
+        crypto pair to retrieve (i.e. BTC/USDT)
+    start_date : str
+        starting date in dataset (YYYY-MM-DD)
+    end_date : str
+        ending date in dataset (YYYY-MM-DD)
+    time_resolution : str
+        resolution in data set (1h, 1d, 1w)
+
+    Outputs:
+    ----------
+    crypto : dataframe 
+        financial data in OHLCV form
+    '''
     print("\n=== Fetching Data ===")
     print(f"\tAsset / Pair: {pair}\n\tStart Date: {start_date}\n\tEnd Date: {end_date}\n\tResolution: {time_resolution}")
 
+    # Retrieve initial set of data
     df_main = data_api(pair, start_date,end_date, time_resolution)
 
+    # Check if end date matches requested end date
     end_date_date = dt.datetime.strptime(end_date, '%Y-%m-%d').date()
     df_end_date = df_main.iloc[[-1]].index.date[0]
-        
+    
+    # If dates don't match, collect additional data
     if end_date_date != df_end_date:
         data_trigger = True
         while data_trigger == True:        
@@ -66,12 +92,11 @@ def fetch_data(pair, start_date,end_date, time_resolution):
             if int((end_date_date-df_end_date).days) < 1:
                 data_trigger = False
 
-    end = time.time()
-    print(f"\n=== Data Successfully Retrieved ===\nData Extraction Time: {round(end-start,2)}s")
+    print(f"\n=== Data Successfully Retrieved ===")
     
     return df_main
 
-
+@gsf.func_perform_time
 def df_trans_calcs(df):
     '''
     Summary:
@@ -90,12 +115,27 @@ def df_trans_calcs(df):
     '''
     df['close price change'] = df['close'].pct_change() * 100
     df['close delta'] = df['close'].diff() 
-    df['vol price change'] = df['vol'].pct_change() * 100
-    df['vol delta'] = df['vol'].diff()
+    df['vol price change'] = df['volume'].pct_change() * 100
+    df['vol delta'] = df['volume'].diff()
     
     return df
 
+@gsf.func_perform_time
 def plot_data(df):
+    '''
+    Summary:
+    ----------
+    Plots data
+
+    Params:
+    ----------
+    df : dataframe 
+        financial data in OHLCV form
+
+    Outputs:
+    ----------
+    none
+    '''
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(
         go.Scattergl(
@@ -126,7 +166,7 @@ def plot_data(df):
 
     fig.show()
 
-
+@gsf.func_perform_time
 def backtest_data_gdsr(df):
     '''
     Summary:
@@ -139,7 +179,7 @@ def backtest_data_gdsr(df):
 
     Outputs:
     ----------
-    None, prints to terminal
+    none
     '''
 
     json_file_path = os.path.join(sys.path[0], 'bt_strats_params.json')
@@ -156,12 +196,13 @@ def backtest_data_gdsr(df):
         print(bt)
 
 
-
 if __name__ == "__main__":
+    gsf.clear_terminal()
+
     # User Inputs
-    pair = "LSK/USDT"
+    pair = "ETH/USDT"
     start_date = "2021-03-10"
-    end_date = "2021-05-14"
+    end_date = "2021-05-15"
     time_resolution = "15m" #15m 30m 1h 1d 1w
 
     # Retrieve financial data
@@ -174,7 +215,7 @@ if __name__ == "__main__":
     plot_data(df)
     
     # Test trading strategies
-    test_strat = True
+    test_strat = False
     if test_strat == True:
         backtest_data_gdsr(df)
         
