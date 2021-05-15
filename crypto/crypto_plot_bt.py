@@ -72,6 +72,29 @@ def fetch_data(pair, start_date,end_date, time_resolution):
     return df_main
 
 
+def df_trans_calcs(df):
+    '''
+    Summary:
+    ----------
+    Performs transformations and calculations on dataframe
+    
+    Params:
+    ----------
+    df : pandas dataframe
+        financial data in OHLCV format
+
+    Outputs:
+    ----------
+    df : pandas dataframe
+        resulting dataframe after transformations and calculations
+    '''
+    df['close price change'] = df['close'].pct_change() * 100
+    df['close delta'] = df['close'].diff() 
+    df['vol price change'] = df['vol'].pct_change() * 100
+    df['vol delta'] = df['vol'].diff()
+    
+    return df
+
 def plot_data(df):
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(
@@ -106,12 +129,16 @@ def plot_data(df):
 
 def backtest_data_gdsr(df):
     '''
-    Open json trading strategy file, test strategies
-
+    Summary:
+    ----------
+    Open json trading strategy file, test strategies through fastquant backtest
+    
     Params:
-    df : dataframe will financial data
+    ----------
+    df : dataframe with financial data
 
     Outputs:
+    ----------
     None, prints to terminal
     '''
 
@@ -136,9 +163,17 @@ if __name__ == "__main__":
     start_date = "2021-03-10"
     end_date = "2021-05-14"
     time_resolution = "15m" #15m 30m 1h 1d 1w
+
+    # Retrieve financial data
     df = fetch_data(pair, start_date, end_date, time_resolution)
+
+    # Performs additional transformations
+    df = df_trans_calcs(df)
+
+    # Plot data
     plot_data(df)
     
+    # Test trading strategies
     test_strat = True
     if test_strat == True:
         backtest_data_gdsr(df)
