@@ -17,13 +17,19 @@ def initialize_prog():
 
 def extract_html(website):
     '''
+    Summary:
+    ----------
     Extracts html using BeautifulSoup from website
 
-    Parameters:
-        website (str): The website to be analyzed.
-
-    Returns:
-        soup (bs4.BeautifulSoup): object containing html.
+    Params:
+    ----------
+    website : str
+        The website to be analyzed
+    
+    Outputs:
+    ----------
+    soup (bs4.BeautifulSoup): object
+        object containing html
     '''
     try:
         # Accessing website
@@ -41,19 +47,25 @@ def extract_html(website):
         return soup
 
     except Exception as ex:
-        print(f"[ERROR] extract_html: {ex}")
+        print(f"[ERROR] extract_html: {ex.args}")
         sys.exit()
 
 
 def extract_by_tag_type(soup):
     '''
+    Summary:
+    ----------
     Separates html tags and adds to dict based on tag type
 
-    Parameters:
-        soup (bs4.BeautifulSoup): html to be analyzed.
-
-    Returns:
-        tag_data_dict (dict): dictionary containing tag types and data.
+    Params:
+    ----------
+    soup (bs4.BeautifulSoup) : object
+        html to be analyzed
+    
+    Outputs:
+    ----------
+    tag_data_dict: dictionary
+        dictionary containing tag types and data
     '''
     try:
         # Find tag types in html
@@ -94,14 +106,20 @@ def extract_by_tag_type(soup):
 
 def extract_by_class_type(soup):
     '''
+    Summary:
+    ----------
     Separates html tags and adds to dict based on
     tag type and class description
 
-    Parameters:
-        soup (bs4.BeautifulSoup): html to be analyzed.
+    Params:
+    ----------
+    soup (bs4.BeautifulSoup) : object
+        html to be analyzed
 
-    Returns:
-        tag_final_dict (dict): dictionary containing tag types and data.
+    Outputs:
+    ----------
+    tag_final_dict: dictionary
+        dictionary containing tag types and data
     '''
     try:
         # Identification of tag types and classes
@@ -197,8 +215,26 @@ def extract_by_class_type(soup):
 
 
 def save_export_data(tag_dict, soup, website):
+    '''
+    Summary:
+    ----------
+    Exports data to html, txt, and json files
+
+    Params:
+    ----------
+    tag_dict : dictionary
+        dictionary containing tag types and data
+    soup (bs4.BeautifulSoup) : object
+        html to be analyzed
+    webite : str
+        scraped website
+    
+    Outputs:
+    ----------
+    None
+    '''
     try:
-        save_directory = 'C:\\Users\\User\\Desktop\\gavelytics_tc_data\\'
+        save_directory = 'C:\\Users\\User\\Desktop\\'
         webname = str(website.split("/")[-1])
         fname_html = save_directory + webname + ".html"
         fname_dict = save_directory + webname + "_class_dict.txt"
