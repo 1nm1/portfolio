@@ -25,7 +25,7 @@ from formats import *
 import warnings
 warnings.simplefilter("ignore")
 
-app = dash.Dash(external_stylesheets=[dbc.themes.CYBORG],suppress_callback_exceptions=True)
+app = dash.Dash(external_stylesheets=[dbc.themes.DARKLY],suppress_callback_exceptions=True)
 
 content = html.Div(id="page-content", style=content_style_1)
 
@@ -34,8 +34,6 @@ sidebar = html.Div([
                 html.Hr(style={'background-color':'white'}),
                 html.P(
                     "Visualize any database data!"),
-                html.P(
-                    "Application developed by Nathan Meek. v0.1"),
                 dbc.Nav(
                     [
                         dbc.NavLink("Data Viz", href="/dv", active="exact"),
@@ -44,6 +42,12 @@ sidebar = html.Div([
                     vertical=True,
                     pills=True,
                 ),
+                html.P(
+                    "Application developed by Nathan Meek",
+                    style={'position': 'absolute', 'bottom': '50px'}),
+                html.P(
+                    "Application version v0.1",
+                    style={'position': 'absolute', 'bottom': '10px'}),
             ],
             style=sidebar_style_1,
         )
@@ -79,7 +83,91 @@ dv_page = html.Div([
                 ],
                 style=nav_bar_style_1),
             ])
-st_page = html.Div([html.H3("Settings page")])
+
+st_page = html.Div([
+            dbc.Form([
+                dbc.FormGroup([
+                    dbc.Label(
+                        "Server",
+                        html_for="input-server",
+                        style=formgroup_settings_label_style_1),
+                    dbc.Input(
+                        type="text", 
+                        id="input-server", 
+                        placeholder="Enter server location",
+                        style=formgroup_settings_input_style_1),
+                    ],
+                    row=True),
+                dbc.FormGroup([
+                    dbc.Label(
+                        "Database", 
+                        html_for="input-db",
+                        style=formgroup_settings_label_style_1),
+                    dbc.Input(
+                        type="text", 
+                        id="input-db", 
+                        placeholder="Enter database",
+                        style=formgroup_settings_input_style_1),
+                    ],
+                    row=True),
+                dbc.FormGroup([
+                    dbc.Label(
+                        "Database User", 
+                        html_for="input-user",
+                        style=formgroup_settings_label_style_1),
+                    dbc.Input(
+                        type="text",
+                        id="input-user",
+                        placeholder="Enter database user",
+                        style=formgroup_settings_input_style_1),
+                    ],
+                    row=True),
+                dbc.FormGroup([
+                    dbc.Label(
+                        "User Password", 
+                        html_for="input-userpw",
+                        style=formgroup_settings_label_style_1),
+                    dbc.Input(
+                        type="password",
+                        id="input-userpw",
+                        placeholder="Enter user password",
+                        style=formgroup_settings_input_style_1),
+                    ],
+                    row=True),
+                dbc.FormGroup([
+                    dbc.Label(
+                        "Reenter Password", 
+                        html_for="input-userpw2",
+                        style=formgroup_settings_label_style_1),
+                    dbc.Input(
+                        type="password",
+                        id="input-userpw2",
+                        placeholder="Reenter password",
+                        style=formgroup_settings_input_style_1),
+                    ],
+                    row=True),
+                ],
+                style=formgroup_settings_style_1),
+            html.Div([
+                dbc.Button(
+                    "Clear form",
+                    id='button-st-clear',
+                    color="secondary",
+                    style=button_settings_clear_form_style_1),
+                dbc.Button(
+                    "Connect",
+                    id='button-db-connect',
+                    color="primary",
+                    style=button_settings_connect_style_1),
+                dbc.Alert(
+                    "Not Connected",
+                    id='alert-db-connect',
+                    color="danger",
+                    style=alert_settings_style_1),
+                ])
+            ],
+            
+            )
 
 app.layout = html.Div([
                 dcc.Store(
@@ -91,9 +179,6 @@ app.layout = html.Div([
                 dcc.Store(
                     id='recommend_store'),
                 dcc.Location(id="url"), 
-                html.H6(".",
-                    id='text_system_message',
-                    style=text_system_message_style),
                 sidebar, 
                 content])
 
@@ -115,8 +200,6 @@ def render_page_content(pathname):
             html.P(f"The pathname {pathname} was not recognized..."),
         ]
     )
-
-
 
 if __name__ == '__main__':
     app.run_server(debug=True,)
