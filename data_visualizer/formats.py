@@ -31,6 +31,11 @@ nav_bar_style_1={'height': '70px', 'margin':'10px'}
 
 # ==============
 # region Database settings formats
+formgroup_settings_style_1 = {
+    'max-width':'700px',
+    'padding':'15px 15px 0px 15px'
+}
+
 formgroup_settings_input_style_1 = {
     "width":"400px"
 }
@@ -41,6 +46,25 @@ formgroup_settings_label_style_1 = {
     "text-align":"right",
     "font-size":"18px",
     "margin":"0px 10px 0px 0px"
+}
+
+alert_settings_style_1 = {
+    "width":"150px",
+    "display":"inline-block",
+    "margin":"10px",
+    "text-align":"center"
+}
+
+button_settings_connect_style_1 = {
+    "width":"125px",
+    "display":"inline-block",
+    "margin":"10px",
+}
+
+button_settings_clear_form_style_1 = {
+    "width":"125px",
+    "display":"inline-block",
+    "margin":"10px 0px 10px 325px",
 }
 # endregion 
 # ==============
