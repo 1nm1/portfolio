@@ -12,6 +12,11 @@ import sql_data_viz_formats as dvfo
 import warnings
 warnings.simplefilter("ignore")
 
+# TODO
+# [/] Add Clear form fucntionality
+# [ ] Add console logging functionality
+# [ ] Add additional function notes and annotations
+
 pio.templates.default = "plotly_dark"
 
 app = dash.Dash(
