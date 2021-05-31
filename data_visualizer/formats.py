@@ -24,6 +24,11 @@ nav_bar_style_1 = {
     'height': '70px',
     'margin': '10px'}
 
+label_navbar_style_1 = {
+    "width": "100px",
+    "text-align": "right",
+    "padding": "10px"
+}
 # endregion
 # ==============
 
@@ -54,16 +59,22 @@ alert_settings_style_1 = {
     "text-align": "center"
 }
 
-button_settings_connect_style_1 = {
+button_settings_disconnect_style_1 = {
     "width": "125px",
     "display": "inline-block",
     "margin": "10px",
 }
 
+button_settings_connect_style_1 = {
+    "width": "125px",
+    "display": "inline-block",
+    "margin": "10px 10px 10px 180px",
+}
+
 button_settings_clear_form_style_1 = {
     "width": "125px",
     "display": "inline-block",
-    "margin": "10px 0px 10px 325px",
+    "margin": "10px 0px 10px 10px",
 }
 # endregion
 # ==============
