@@ -25,16 +25,11 @@ def connect_to_db(server, database, user, password):
     NA - declares create_engine variable, engine, globally'''
     # endregion
     global engine
-    if (server is None) or (server == ""):
-        server = 'localhost'
-        database = 'data_viz_demo'
-        user = 'data_viz_user'
-        password = 'data_viz_pw_1!'
-
     db_string = f"postgres://{user}:{password}@{server}:5432/{database}"
     print(f"\t[MSG] Connecting to DB\n\t{db_string}")
 
     engine = sa.create_engine(db_string)
+    engine.execute('SELECT 1')
     print("\t[MSG] Connection Established")
 
 
@@ -65,7 +60,13 @@ def extract_tables(server, database, user, password):
         ex.args : str
             error arguments if any'''
     # endregion
-    connect_to_db(server, database, user, password)
+    try:
+        connect_to_db(server, database, user, password)
+
+    except Exception as ex:
+        print("\t[ERR] DB Connection Failed")
+        print(f"\t{ex.args}")
+        return [None, 'failure', ex.args]
 
     table_q = """
                 SELECT table_name
@@ -74,12 +75,15 @@ def extract_tables(server, database, user, password):
                 ORDER BY table_name;
                 """
     try:
+        print(f"\t[MSG] Extracting tables from {database}")
         tables = engine.execute(table_q).fetchall()
         available_tables = [table[0] for table in tables]
+        print("\t[MSG] Table Extraction Successful")
         return [available_tables, 'success', None]
 
     except Exception as ex:
-        print(ex.args)
+        print("\t[ERR] Table Extraction Failed")
+        print(f"\t{ex.args}")
         return [None, 'failure', ex.args]
 
 
@@ -122,12 +126,15 @@ def extract_columns(table,  server, database, user, pw):
             WHERE TABLE_NAME = :x;
             """)
     try:
+        print(f"\t[MSG] Querying columns from {table}")
         columns = engine.execute(col_q, x=table).fetchall()
         available_cols = [col[0] for col in columns]
+        print("\t[MSG] Column Query Successful")
         return [available_cols, 'success', None]
 
     except Exception as ex:
-        print(ex.args)
+        print("\t[ERR] Column Query Failed")
+        print(f"\t{ex.args}")
         return [None, 'failure', ex.args]
 
 
@@ -167,13 +174,15 @@ def extract_data(column, table, server, database, user, pw):
         connect_to_db(server, database, user, pw)
 
     try:
+        print(f"\t[MSG] Querying data from '{table}.{column}'")
         data = pd.read_sql(
                 table,
                 engine,
                 columns=[column])
-
+        print("\t[MSG] Data Query Successful")
         return [data, 'success', None]
 
     except Exception as ex:
-        print(ex.args)
+        print("\t[ERR] Data Query Failed")
+        print(f"\t{ex.args}")
         return [None, 'failure', ex.args]
