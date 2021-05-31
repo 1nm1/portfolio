@@ -20,15 +20,37 @@ content_style_1 = {
 # ==============
 # region Data Viz Page formats
 
-nav_bar_style_1 = {
+nav_bar_style_visible = {
     'height': '70px',
-    'margin': '10px'}
+    'margin': '10px 10px 10px 100px'
+}
+
+nav_bar_style_hidden = {
+    'height': '0px',
+    "visibility": "hidden"
+}
 
 label_navbar_style_1 = {
+    "width": "100px",
+    "margin-left": "100px",
+    "text-align": "right",
+    "padding": "10px"
+}
+
+label_navbar_style_2 = {
     "width": "100px",
     "text-align": "right",
     "padding": "10px"
 }
+
+dropdown_navbar_style_1 = {
+    "width": "200px",
+    "height": "35px",
+    "color": "black",
+    "margin-right": "10px"
+}
+
+
 # endregion
 # ==============
 
