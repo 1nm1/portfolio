@@ -11,3 +11,5 @@
 This is my portfolio for all things related to data engineering, data science, and software development
 
 Related content is grouped into folders and specific projects are listed within.
+
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=1nm1)](https://github.com/1nm1)
