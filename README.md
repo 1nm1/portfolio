@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=”https://user-images.githubusercontent.com/11877105/171330017-84def4a4-b4d7-4611-8d9c-48db1f18a5c8.png" alt="my banner">
+  <img src=”https://user-images.githubusercontent.com/11877105/171330017-84def4a4-b4d7-4611-8d9c-48db1f18a5c8.png">
 </p>
 
 # Nathan Meek Portfolio
