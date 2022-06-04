@@ -1,12 +1,14 @@
 ![alt text](https://user-images.githubusercontent.com/11877105/171971269-2be6dfaf-a848-4180-9dae-e12ae30d4b62.png)
 
-# My name is Nathan and this is my portfolio! Thank you for stopping by
+# My name is Nathan and this is my portfolio!
+
+## Thank you for stopping by!
 
 ### This is my portfolio for all things related to data engineering, data science, and software development
 
-## Below you'll find sections about me and my portfolio
-
 ### Last Updated: June 2022
+
+### Below you'll find sections about me and my portfolio
 
 ---
 
