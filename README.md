@@ -38,15 +38,15 @@ Check out my linkedin for a detailed job history!
 [![Cassandra](https://img.shields.io/badge/Cassandra-1287B1?style=for-the-badge&logo=apache%20cassandra&logoColor=white)](https://cassandra.apache.org)
 [![Influx](https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=InfluxDB&logoColor=white)](https://www.influxdata.com/)
 [![RabbitMQ](https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=for-the-badge&logo=rabbitmq&logoColor=white)](https://www.rabbitmq.com/)
-[![C++](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://isocpp.org/)
+[![C++](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
 ### Learning
 
 [![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.typescriptlang.org/)
-[![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)]
-[![](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)]
-[![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)]
+[![](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
+[![](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
+[![](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 
 <!--
 ### Github Stats
@@ -89,6 +89,4 @@ PORTFOLIO
 
 Thanks for visiting!
 
-![Kitty!](https://user-images.githubusercontent.com/11877105/172026331-02899975-dd29-45e4-a4f5-804dc2e879b7.jpeg)
-
-<!-- [![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=1nm1)](https://github.com/1nm1) -->
+[![Kitty!](https://user-images.githubusercontent.com/11877105/172026640-847b2c9b-66c7-4ab2-b3e8-0fb14954bb26.png)](https://bestfriends.org/)
