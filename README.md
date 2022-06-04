@@ -1,8 +1,4 @@
-<p align="center">
-  <img width=”200" height=”200" src=”https://user-images.githubusercontent.com/11877105/171330017-84def4a4-b4d7-4611-8d9c-48db1f18a5c8.png">
-</p>
-
-![alt text](https://user-images.githubusercontent.com/11877105/171330017-84def4a4-b4d7-4611-8d9c-48db1f18a5c8.png)
+![alt text](https://user-images.githubusercontent.com/11877105/171971269-2be6dfaf-a848-4180-9dae-e12ae30d4b62.png)
 
 # Nathan Meek Portfolio
 
@@ -14,7 +10,29 @@
 
 This is my portfolio for all things related to data engineering, data science, and software development
 
-Related content is grouped into folders and specific projects are listed within.
+Related content is grouped into folders and specific projects are listed within. The specific file and directory information can be seen below:
+
+```
+PORTFOLIO
+│   README.md  : Portfolio Information
+│   .gitignore : Files to ignore
+│
+└───Cryptocurrencies
+│   │   .ipynb_checkpoints          : Save points for jupyter notebooks
+│   │   bt_strats_params.json       : JSON file with parameters for backtesting strategies
+│   │   crypto_plot_bt.py           : Python file for plotting binance / fastquant data
+│   │   crypto_plt_bt_example.ipynb : Jupyter notebook showing example use
+│   │   general_script_function.py  : Python file with aux functions
+│
+└───folder2
+│   │   file021.txt
+│   │   file022.txt
+│   │
+│   └───Data_
+│       │   file111.txt
+│       │   file112.txt
+│       │   ...
+```
 
 ---
 
