@@ -1,6 +1,4 @@
-![alt text](https://user-images.githubusercontent.com/11877105/171971269-2be6dfaf-a848-4180-9dae-e12ae30d4b62.png)
-
-# My name is Nathan and this is my portfolio!
+![github_banner_3](https://user-images.githubusercontent.com/11877105/172026082-fd80a8e1-ceb4-4b89-bd49-032bee1d1f49.jpg)
 
 This is my portfolio for all things related to data engineering, data science, and software development
 Last Updated: June 2022
