@@ -4,11 +4,10 @@
 
 ## Thank you for stopping by!
 
-### This is my portfolio for all things related to data engineering, data science, and software development
+This is my portfolio for all things related to data engineering, data science, and software development
+Last Updated: June 2022
 
-### Last Updated: June 2022
-
-### Below you'll find sections about me and my portfolio
+Below you'll find sections about me and my portfolio
 
 ---
 
@@ -25,7 +24,11 @@
 ![](https://img.shields.io/badge/Tools-Git-informational?style=flat&logo=Git&color=F05032)
 ![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
 
----
+### Github Stats
+
+[![Anurag’s github stats](https://github-readme-stats.vercel.app/api?username=yushi1007)](https://github.com/1nm1)
+
+## [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yushi1007&layout=compact)](https://github.com/1nm1)
 
 ## About My Portfolio
 
