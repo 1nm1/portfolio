@@ -15,20 +15,24 @@ Below you'll find sections about me and my portfolio
 
 ### 💼 Technical Skills
 
-</br>
-
-![](https://img.shields.io/badge/Tools-React-informational?style=flat&logo=React&color=F24E1E)
-![](https://img.shields.io/badge/Tools-NPM-informational?style=flat&logo=NPM&color=CB3837)
-![](https://img.shields.io/badge/Tools-Heroku-informational?style=flat&logo=Heroku&color=430098)
-![](https://img.shields.io/badge/Tools-Netlify-informational?style=flat&logo=netlify&color=00C7B7)
+**Expert**
 ![](https://img.shields.io/badge/Tools-Git-informational?style=flat&logo=Git&color=F05032)
 ![](https://img.shields.io/badge/Tools-GitHub-informational?style=flat&logo=GitHub&color=181717)
 
+**Comfortable**
+![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+**Learning**
+
+![](https://img.shields.io/badge/Tools-NPM-informational?style=flat&logo=NPM&color=CB3837)
+![](https://img.shields.io/badge/Tools-Heroku-informational?style=flat&logo=Heroku&color=430098)
+![](https://img.shields.io/badge/Tools-Netlify-informational?style=flat&logo=netlify&color=00C7B7)
+
 ### Github Stats
 
-[![Anurag’s github stats](https://github-readme-stats.vercel.app/api?username=yushi1007)](https://github.com/1nm1)
+[![Anurag’s github stats](https://github-readme-stats.vercel.app/api?username=1nm1)](https://github.com/1nm1)
 
-## [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yushi1007&layout=compact)](https://github.com/1nm1)
+## [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=1nm1&layout=compact)](https://github.com/1nm1)
 
 ## About My Portfolio
 
