@@ -15,8 +15,6 @@ Below you'll find sections about me and my portfolio
 
 ## 💼 Technical Skills
 
-<br></br>
-
 ### Expert
 
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
