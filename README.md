@@ -2,8 +2,6 @@
 
 # My name is Nathan and this is my portfolio!
 
-## Thank you for stopping by!
-
 This is my portfolio for all things related to data engineering, data science, and software development
 Last Updated: June 2022
 
@@ -13,11 +11,16 @@ Below you'll find sections about me and my portfolio
 
 # About Me
 
+Hello! Thanks for stopping by and looking at my portfolio. As the lead data engineer in my current role, I spend a lot of time working with data. Most of my days are spent developing data pipelines, API layers, and AI/ML applications through python, SQL, and javascript via a number of different tools and frameworks.
+
+I've been in working with data and software since my masters program starting back in ~2013. Initially I developed scripts in matlab and python to process carbon composite material data (mechanical, structural, etc). Once I entered the aerospace industry I transitioned to advanaced manufacturing where I developed systems and software for manufacturing environments. This included connecting to automated equipment to capture data (Fanuc, Kuka), developing software (MSSQL, C#.Net), implementing IoT / sensors (Siemens RFID, Impinj), and workflow automation (python).
+
 ## 💼 Technical Skills
 
 ### Expert
 
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 ![](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
@@ -28,11 +31,14 @@ Below you'll find sections about me and my portfolio
 ![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)
 ![](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
+![](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 ![](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
+![](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
 ![](https://img.shields.io/badge/Cassandra-1287B1?style=for-the-badge&logo=apache%20cassandra&logoColor=white)
 ![](https://img.shields.io/badge/InfluxDB-22ADF6?style=for-the-badge&logo=InfluxDB&logoColor=white)
 ![](https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=for-the-badge&logo=rabbitmq&logoColor=white)
+![](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 
 ### Learning
 
