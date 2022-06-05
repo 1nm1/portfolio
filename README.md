@@ -66,25 +66,29 @@ My portfolio contains a mixture of completed projects, projects in development, 
 Related content is grouped into folders and specific projects are listed within. The specific file and directory information can be seen below:
 
 ```
+Structure and directories still in development! I'm in the processing of adding a few more apps / scipts to this portfolio which will lead to some reorganization
+
 PORTFOLIO
 │   README.md  : Portfolio Information
 │   .gitignore : Files to ignore
 │
-└───Cryptocurrencies
+└───Cryptocurrencies : Crypto related scripts and apps
 │   │   .ipynb_checkpoints          : Save points for jupyter notebooks
 │   │   bt_strats_params.json       : JSON file with parameters for backtesting strategies
 │   │   crypto_plot_bt.py           : Python file for plotting binance / fastquant data
 │   │   crypto_plt_bt_example.ipynb : Jupyter notebook showing example use
 │   │   general_script_function.py  : Python file with aux functions
 │
-└───folder2
-│   │   file021.txt
-│   │   file022.txt
+└───Infrastructure : Scripts / notes related to hosting, networking, orchestrating, etc.
 │   │
-│   └───Data_
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
+│   └───Docker_K8s : Scripts / notes related to Docker and Kubernetes
+│   │   │   K8s_cheat_sheet.md : Notes for working with Helm and Kubernetes
+│   │
+│   └───Terraform : Scripts / notes related to Terraform
+│       │   notes.md : Notes and resources for working with Terraform
+│       │
+│       └───gcp-terraform : example use of terraform with GCP
+│           │   files not explicitly called out here (there are many) but it's pretty self-explanatory
 ```
 
 ---
