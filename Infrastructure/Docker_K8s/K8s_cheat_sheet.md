@@ -76,3 +76,12 @@
   - ```
     helm list -A
     ```
+
+---
+
+### Kubernetes
+
+| Description            | Command                                             | Notes                            |
+| ---------------------- | --------------------------------------------------- | -------------------------------- |
+| View Pod Status        | kubectl get pods                                    | add --watch to print live status |
+| Shell into coordinator | kubectl exec -it <COORD_POD> -c coordinator -- bash |                                  |
