@@ -1,4 +1,4 @@
-![Banner](https://user-images.githubusercontent.com/11877105/172026115-915605d7-bc12-468d-9e44-7baba3c5633b.png)
+![Banner](https://user-images.githubusercontent.com/11877105/172061208-04d90701-6cfa-487e-bb35-c7e216533f0a.png)
 
 This is my portfolio for all things related to data engineering, data science, and software development
 Last Updated: June 2022
