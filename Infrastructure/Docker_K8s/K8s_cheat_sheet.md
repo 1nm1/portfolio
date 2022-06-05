@@ -1,13 +1,18 @@
 ## Helm / K8s Cheat sheet
 
-There are a lot of helm and k8s commands and likewise a lot of published cheat sheets (some list in resources below). These are the commands I tend to use the most.
+There are a lot of helm and k8s commands and likewise a lot of published cheat sheets (some listed in resources below). These are the commands I tend to use the most.
 
 ### Useful Resources
 
-- https://helm.sh/docs/
-- https://phoenixnap.com/kb/helm-commands-cheat-sheet
-- https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
-- https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+- Helm
+
+  - https://helm.sh/docs/
+  - https://phoenixnap.com/kb/helm-commands-cheat-sheet
+
+- K8s
+  - https://kubernetes.io/docs/reference/
+  - https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
+  - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 ---
 
