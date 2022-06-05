@@ -3,3 +3,7 @@ data_visualizer/user_params.txt
 *.jpg
 *.png
 *.pyc
+
+key.json
+
+.DS_store
