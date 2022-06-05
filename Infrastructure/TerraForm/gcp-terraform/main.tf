@@ -1,18 +1,18 @@
 
 
 provider "google" {
-  credentials = file("key.json")
+  credentials = file(var.credentials_file)
 
-  project = "<project>"
-  region  = "us-west2"
+  project = var.project
+  region  = var.region
 }
 
 resource "google_compute_instance" "default" {
   name         = "compute-dev-api"
   machine_type = "f1-micro"
-  zone         = "us-west2-a"
+  zone         = var.zone
 
-  tags = ["project", "dev-api"]
+  tags = ["project", "prod-api"]
 
   boot_disk {
     initialize_params {
@@ -21,9 +21,9 @@ resource "google_compute_instance" "default" {
   }
 
   // Local SSD disk
-#   scratch_disk {
-#     interface = "NVME"
-#   }
+  #   scratch_disk {
+  #     interface = "NVME"
+  #   }
 
   network_interface {
     network = "default"
@@ -40,8 +40,8 @@ resource "google_compute_instance" "default" {
   //metadata_startup_script = "echo hi > /test.txt"
 
   service_account {
-    
-    email  = "<service-account@email.address.com>"
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = var.service_account_email
     scopes = ["cloud-platform"]
   }
 }
