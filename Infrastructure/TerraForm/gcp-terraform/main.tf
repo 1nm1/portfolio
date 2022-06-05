@@ -3,7 +3,7 @@
 provider "google" {
   credentials = file("key.json")
 
-  project = "sandbox-project-323606"
+  project = "<project>"
   region  = "us-west2"
 }
 
@@ -40,8 +40,8 @@ resource "google_compute_instance" "default" {
   //metadata_startup_script = "echo hi > /test.txt"
 
   service_account {
-    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = "terraform-sa@sandbox-project-323606.iam.gserviceaccount.com"
+    
+    email  = "<service-account@email.address.com>"
     scopes = ["cloud-platform"]
   }
 }
