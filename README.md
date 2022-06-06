@@ -40,7 +40,7 @@ Check out my linkedin for a detailed job history!
 [![RabbitMQ](https://img.shields.io/badge/rabbitmq-%23FF6600.svg?&style=for-the-badge&logo=rabbitmq&logoColor=white)](https://www.rabbitmq.com/)
 [![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
-Others that I cannot find badges for!
+<em>Others that I cannot find badges for!<em>
 
 - Apache Spark
 - Apache Beam
